@@ -43,6 +43,16 @@ dependencies {
     implementation(libs.compose.ui)
     implementation(libs.compose.ui.tooling.preview)
     implementation(libs.compose.material3)
+
     implementation(libs.androidx.activity.compose)
     debugImplementation(libs.compose.ui.tooling)
+    //navigation
+    var nav_version = "2.7.7"
+    implementation("androidx.navigation:navigation-compose:$nav_version")
+    implementation("androidx.compose.material:material:1.5.4")
+
+//biometric finger print
+    implementation("androidx.biometric:biometric:1.2.0-alpha05")
+    implementation ("com.airbnb.android:lottie-compose:6.1.0")
+
 }
