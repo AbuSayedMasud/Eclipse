@@ -1,6 +1,7 @@
 package com.leadsoft.ziskapharma.android.home
 
 import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.background
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -18,15 +19,19 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.snapshotFlow
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
 import androidx.navigation.NavHostController
 import com.google.accompanist.pager.ExperimentalPagerApi
+import com.google.accompanist.pager.HorizontalPager
 import com.leadsoft.ziskapharma.android.R
 import com.leadsoft.ziskapharma.android.shell.MyAppBar
+import com.leadsoft.ziskapharma.android.theme.BackgroundColor
 import com.leadsoft.ziskapharma.android.theme.PrimaryColor
 
 @OptIn(ExperimentalPagerApi::class)
@@ -76,9 +81,8 @@ fun HomeScreen (navController: NavHostController){
                         showSearchBar = false,
                         onProfileClick = onProfileClick,
                         profilePhoto = profilePhoto,
-                        showSearchIcon = true,
+                        showSearchIcon = false,
                         showNotificationIcon = true,
-
                         currentRoute = currentRoute,
                         showArrow = false,
                     )
@@ -86,5 +90,21 @@ fun HomeScreen (navController: NavHostController){
             }
 
         }
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .background(if (isSystemInDarkTheme()) BackgroundColor else Color(0xfff9f9f9)),
+        ){
+            HorizontalPager(
+                count = sections.size,
+                state = pagerState,
+                modifier = Modifier.fillMaxSize(),
+                userScrollEnabled = isSwipeEnabled,
+            ){
+
+            }
+        }
+
     }
 }
+
