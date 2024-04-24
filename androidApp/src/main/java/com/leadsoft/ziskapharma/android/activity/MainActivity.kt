@@ -1,8 +1,7 @@
-package com.leadsoft.ziskapharma.android
+package com.leadsoft.ziskapharma.android.activity
 
 import android.os.Build
 import android.os.Bundle
-import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.annotation.RequiresApi
 import androidx.compose.foundation.background
@@ -17,7 +16,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.rememberNavController
-import com.leadsoft.ziskapharma.Greeting
+import com.leadsoft.ziskapharma.android.MyApplicationTheme
 import com.leadsoft.ziskapharma.android.shell.LoginNavGraph
 import com.leadsoft.ziskapharma.android.shell.SetStatusBarColor
 import com.leadsoft.ziskapharma.android.theme.BackgroundColor
