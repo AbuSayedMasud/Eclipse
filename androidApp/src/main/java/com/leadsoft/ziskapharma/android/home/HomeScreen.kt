@@ -45,9 +45,9 @@ fun HomeScreen (navController: NavHostController){
     val currentRoute = remember { mutableStateOf(navController.currentBackStackEntry?.destination?.route) }
     val lighterAppBarColor = if (isSystemInDarkTheme()) PrimaryColor else PrimaryColor
     val sections = listOf(
-        "Overview",
-        "Indices",
-        "Stocks",
+        "Sales Summary",
+        "Summary Update",
+        "Brand Wise",
         "Watchlist",
         "News",
     )
