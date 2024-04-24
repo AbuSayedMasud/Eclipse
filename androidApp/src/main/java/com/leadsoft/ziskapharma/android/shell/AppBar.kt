@@ -177,9 +177,7 @@ fun MyAppBar(
                             }
                         }
                     }
-
-                    // when in home page title (e.g. shanta) will be in center else title will be at the start of appbar (e.g. market)
-                    if (currentRoute != null && currentRoute.value == "Home") {
+                    if (currentRoute != null && currentRoute.value == BottomBar.Home.route) {
                         Text(
                             text = title,
                             fontSize = 21.sp,
@@ -200,7 +198,6 @@ fun MyAppBar(
                             modifier = Modifier
                                 .fillMaxWidth()
                                 .padding(bottom = 2.dp),
-//                                .offset(x = 1.dp),
                         )
                     }
                 }
