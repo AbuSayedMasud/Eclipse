@@ -8,6 +8,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.leadsoft.ziskapharma.android.biometric.BioMetricRegistrationScreen
 import com.leadsoft.ziskapharma.android.biometric.BiometricFingerPrintRegistrationView
+import com.leadsoft.ziskapharma.android.forgetPassword.ForgetPasswordScreen
 import com.leadsoft.ziskapharma.android.login.LoginScreen
 
 @RequiresApi(Build.VERSION_CODES.O)
@@ -24,6 +25,9 @@ fun LoginNavGraph(navController: NavHostController){
             BiometricFingerPrintRegistrationView(
                 navController = navController,
             )
+        }
+        composable("forgetPassword") {
+            ForgetPasswordScreen(navController)
         }
     }
 }

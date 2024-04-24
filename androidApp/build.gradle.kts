@@ -50,9 +50,14 @@ dependencies {
     var nav_version = "2.7.7"
     implementation("androidx.navigation:navigation-compose:$nav_version")
     implementation("androidx.compose.material:material:1.5.4")
-
-//biometric finger print
+    //bottom bar
+    implementation ("androidx.compose.material:material:1.6.6")
+    //biometric finger print
     implementation("androidx.biometric:biometric:1.2.0-alpha05")
     implementation ("com.airbnb.android:lottie-compose:6.1.0")
+
+    //datepicker
+    implementation ("io.github.vanpra.compose-material-dialogs:datetime:0.9.0")
+    coreLibraryDesugaring ("com.android.tools:desugar_jdk_libs:2.0.3")
 
 }

@@ -1,9 +1,12 @@
 package com.leadsoft.ziskapharma.android.login
 
 import android.annotation.SuppressLint
+import android.util.Log
+import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -64,7 +67,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.leadsoft.ziskapharma.android.R
+import com.leadsoft.ziskapharma.android.biometric.BioMetricPrompt
 import com.leadsoft.ziskapharma.android.formatnumber.isWithinMaxCharLimit
+import com.leadsoft.ziskapharma.android.sharePreference.PreferencesManager
 import com.leadsoft.ziskapharma.android.snackbar.CustomSnackbarVisuals
 import com.leadsoft.ziskapharma.android.theme.AppTheme
 import com.leadsoft.ziskapharma.android.theme.BackgroundColor
@@ -93,7 +98,9 @@ fun LoginView(navController: NavHostController) {
     val placeholderTextColor = if (isSystemInDarkTheme()) Color(0x83F1F3F4) else Color.DarkGray
     val (backgroundColor, contentColor) = getCardColors()
     val fingerButton = if (isSystemInDarkTheme()) Color(0xFF283138) else Color.White
-
+    val biometricPrompt = BioMetricPrompt().bioMetricAuthentication()
+    val preferencesManager = PreferencesManager(context)
+    val getpreferenceData = preferencesManager.getKey("RegistrationKey", "default_value")
     val scaffoldState = rememberScaffoldState()
     val coroutineScope = rememberCoroutineScope()
     val keyboardController = LocalSoftwareKeyboardController.current
@@ -330,7 +337,19 @@ fun LoginView(navController: NavHostController) {
                         // Second Button with 0.5f width
                         Button(
                             onClick = {
-                                // Handle button click
+
+                                Log.d("preference Data0ne", getpreferenceData)
+                                if (getpreferenceData == "okay") {
+                                    BioMetricPrompt().showBiometricPrompt(biometricPrompt)
+                                } else {
+                                    Toast
+                                        .makeText(
+                                            context,
+                                            "Please Register the Finger Print ",
+                                            Toast.LENGTH_SHORT,
+                                        )
+                                        .show()
+                                }
                             },
                             modifier = Modifier
                                 .weight(0.5f)
