@@ -16,6 +16,8 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.rememberNavController
 import com.leadsoft.ziskapharma.android.session.SessionManager
+import com.leadsoft.ziskapharma.android.shell.BottomNavGraph
+import com.leadsoft.ziskapharma.android.shell.MainScreenBottomBar
 import com.leadsoft.ziskapharma.android.shell.SetStatusBarColor
 import com.leadsoft.ziskapharma.android.theme.BottomBarColor2
 import com.leadsoft.ziskapharma.android.theme.PrimaryColor
@@ -42,14 +44,14 @@ class HomeActivity : ComponentActivity() {
             val navigationBarColor = if (isSystemInDarkTheme()) BottomBarColor2 else White
 
             val context = LocalContext.current
-//            val jsonDataLoader = JsonDataLoader()
-//            println("isDataLoaded: ${jsonDataLoader.isDataSuccessfullyLoaded()}")
+
 
             SetStatusBarColor(PrimaryColor, navigationBarColor)
             val window = rememberWindowSizeClass()
             ZiskaTheme(window) {
                 Column {
-                    Text(text = "data")
+                    MainScreenBottomBar(colorSelectionViewModel)
+                    BottomNavGraph(navController = navController)
                 }
             }
         }

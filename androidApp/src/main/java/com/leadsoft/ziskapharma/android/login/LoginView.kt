@@ -1,6 +1,7 @@
 package com.leadsoft.ziskapharma.android.login
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.util.Log
 import android.widget.Toast
 import androidx.compose.foundation.Image
@@ -67,6 +68,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.leadsoft.ziskapharma.android.R
+import com.leadsoft.ziskapharma.android.activity.HomeActivity
 import com.leadsoft.ziskapharma.android.biometric.BioMetricPrompt
 import com.leadsoft.ziskapharma.android.formatnumber.isWithinMaxCharLimit
 import com.leadsoft.ziskapharma.android.sharePreference.PreferencesManager
@@ -232,6 +234,7 @@ fun LoginView(navController: NavHostController) {
                             Icon(
                                 Icons.Default.Lock,
                                 contentDescription = "Password Icon",
+                                tint = PrimaryColor,
                             )
                         },
                         trailingIcon = {
@@ -245,7 +248,7 @@ fun LoginView(navController: NavHostController) {
                                 modifier = Modifier.clickable {
                                     passwordVisible = !passwordVisible
                                 },
-                                tint = contentColor,
+                                tint = PrimaryColor,
                             )
                         },
                         keyboardOptions = KeyboardOptions.Default.copy(
@@ -313,6 +316,8 @@ fun LoginView(navController: NavHostController) {
                         // First Button with 2f width
                         Button(
                             onClick = {
+                                val intent = Intent(context, HomeActivity::class.java)
+                                context.startActivity(intent)
                                 // Hide the keyboard
                                 keyboardController?.hide()
                             },
