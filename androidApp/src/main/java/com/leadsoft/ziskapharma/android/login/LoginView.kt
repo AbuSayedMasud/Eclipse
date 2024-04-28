@@ -147,18 +147,16 @@ fun LoginView(navController: NavHostController) {
                         horizontalArrangement = Arrangement.Center,
                         modifier = Modifier
                             .fillMaxWidth()
-                            .padding(top = 50.dp),
+
                     ) {
                         Image(
                             painter = painterResource(R.drawable.eclipse),
                             modifier = Modifier
-                                .clip(shape = RoundedCornerShape(8.dp))
-                                .size(78.dp),
+                                .size(250.dp),
                             contentDescription = ""
                         )
                     }
 
-                    Spacer(modifier = Modifier.height(AppTheme.dimens.spacer1))
                     OutlinedTextField(
                         value = username,
                         onValueChange = {
@@ -413,7 +411,7 @@ fun LoginView(navController: NavHostController) {
                             contentDescription = "Login Image",
                             modifier = Modifier
                                 .clip(shape = RoundedCornerShape(8.dp))
-                                .size(78.dp)
+                                .size(120.dp)
                         )
                     }
                 }
