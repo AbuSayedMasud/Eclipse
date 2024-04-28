@@ -40,8 +40,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import com.leadsoft.ziskapharma.android.theme.PrimaryColor
 import com.leadsoft.ziskapharma.android.R
+import com.leadsoft.ziskapharma.android.theme.PrimaryColor
 
 @Composable
 fun MyAppBar(
@@ -58,7 +58,7 @@ fun MyAppBar(
     currentRoute: MutableState<String?>?,
     showArrow: Boolean = false,
 ) {
-    val myCustomColor = PrimaryColor
+    val myCustomColor = Color.White
 
     var searchText by remember { mutableStateOf("") }
     val isSearching by remember { mutableStateOf(showSearchBar) }
@@ -159,35 +159,55 @@ fun MyAppBar(
                             IconButton(onClick = onProfileClick) {
                                 Box(
                                     modifier = Modifier
-                                        .size(46.dp)
+                                        .size(55.dp)
                                         .padding(8.dp)
                                         .clip(CircleShape)
                                         .border(1.dp, Color.White, CircleShape)
-                                        .background(Color.Gray),
+                                        .background(Color.White)
+                                        .align(Alignment.Center),
                                 ) {
                                     if (profilePhoto != null) {
                                         Image(
                                             painter = profilePhoto,
                                             contentDescription = "Profile Photo",
                                             modifier = Modifier.fillMaxSize(),
-                                            contentScale = ContentScale.Crop,
+                                            contentScale = ContentScale.Inside,
                                         )
                                     }
                                 }
                             }
                         }
                     }
+
                     if (currentRoute != null && currentRoute.value == BottomBar.Home.route) {
-                        Text(
-                            text = title,
-                            fontSize = 21.sp,
-                            fontWeight = FontWeight.Bold,
-                            color = Color.White,
-                            textAlign = TextAlign.Center,
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .padding(bottom = 2.dp),
-                        )
+                        Box(
+                            contentAlignment = Alignment.Center,
+                            modifier = Modifier.align(Alignment.CenterVertically).fillMaxWidth()
+                        ){
+                            IconButton(
+                                modifier = Modifier
+                                    .align(Alignment.Center),
+                                onClick = {}
+                            ) {
+                                Box(
+                                    modifier = Modifier
+                                        .padding(8.dp).size(width = 100.dp, height = 50.dp)  // Specify a fixed size
+                                        .align(Alignment.Center),
+                                    contentAlignment = Alignment.Center
+                                ) {
+                                    if (profilePhoto != null) {
+                                        Image(
+                                            painter =painterResource(R.drawable.eclips_title),
+                                            contentDescription = "Profile Photo",
+                                            alignment= Alignment.Center,
+                                            contentScale = ContentScale.Crop,
+                                        )
+                                    }
+                                }
+                            }
+                        }
+
+
                     } else {
                         Text(
                             text = title,
@@ -215,7 +235,7 @@ fun MyAppBar(
                         Icon(
                             Icons.Default.Search,
                             contentDescription = null,
-                            tint = Color.White,
+                            tint = PrimaryColor,
                             modifier = Modifier.size(27.dp),
                         )
                     }
@@ -231,7 +251,7 @@ fun MyAppBar(
                         Icon(
                             Icons.Default.Notifications,
                             contentDescription = null,
-                            tint = Color.White,
+                            tint = PrimaryColor,
                             modifier = Modifier.size(27.dp),
                         )
                     }
@@ -247,7 +267,7 @@ fun MyAppBar(
                         Icon(
                             Icons.Default.Settings,
                             contentDescription = null,
-                            tint = Color.White,
+                            tint = PrimaryColor,
                             modifier = Modifier.size(27.dp),
                         )
                     }
