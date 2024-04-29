@@ -111,7 +111,7 @@ fun HomeScreen(navController: NavHostController) {
             HorizontalPager(
                 state = pagerState,
                 modifier = Modifier.fillMaxSize(),
-                userScrollEnabled = isSwipeEnabled,
+                userScrollEnabled = false,
             ) { page ->
                 Box(Modifier.fillMaxSize()) {
                     when (reportSelectedSection.value) {
