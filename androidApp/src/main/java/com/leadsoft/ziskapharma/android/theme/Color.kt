@@ -20,3 +20,7 @@ val Shadow = Color(0xFF878787)
 val Gray = Color(0xFF808080)
 val LightGray = Color(0xFFD3D3D3)
 var SecondarySelectedColor=Color(0xFFDFDEE2)
+var SelectedColor=Color(0xFF0062FF)
+var SecondaryText=Color(0xFF96A7AF)
+var SecondaryBackgroundColor=Color(0xfff9f9f9)
+

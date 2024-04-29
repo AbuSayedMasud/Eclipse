@@ -61,5 +61,5 @@ dependencies {
     //pager
     implementation ("com.google.accompanist:accompanist-pager:0.30.0")
     implementation ("com.google.accompanist:accompanist-pager-indicators:0.30.0")
-
+    implementation ("androidx.compose.foundation:foundation:1.6.6")
 }

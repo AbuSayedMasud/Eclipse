@@ -184,6 +184,7 @@ fun LoginView(navController: NavHostController) {
                             Icon(
                                 Icons.Default.Person,
                                 contentDescription = "Username Icon",
+                                tint = PrimaryColor
                             )
                         },
                         trailingIcon = {

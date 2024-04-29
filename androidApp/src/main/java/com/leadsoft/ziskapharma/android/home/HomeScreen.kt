@@ -5,10 +5,13 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.pager.HorizontalPager
+import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.material.Surface
-import com.google.accompanist.pager.rememberPagerState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -27,48 +30,44 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
 import androidx.navigation.NavHostController
-import com.google.accompanist.pager.ExperimentalPagerApi
-import com.google.accompanist.pager.HorizontalPager
 import com.leadsoft.ziskapharma.android.R
 import com.leadsoft.ziskapharma.android.shell.MyAppBar
+import com.leadsoft.ziskapharma.android.shell.SectionBar
 import com.leadsoft.ziskapharma.android.theme.BackgroundColor
 import com.leadsoft.ziskapharma.android.theme.PrimaryColor
+import com.leadsoft.ziskapharma.android.theme.SecondaryBackgroundColor
 
-@OptIn(ExperimentalPagerApi::class)
+@OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun HomeScreen (navController: NavHostController){
-    val profilePhoto: Painter = painterResource(R.drawable.ziska_logo)
+fun HomeScreen(navController: NavHostController) {
+    val profilePhoto: Painter = painterResource(R.drawable.eclips_logo)
     val onProfileClick: () -> Unit = {
         // Handle the profile photo click event here
     }
-    val context = LocalContext.current
-    val currentRoute = remember { mutableStateOf(navController.currentBackStackEntry?.destination?.route) }
-    val lighterAppBarColor = if (isSystemInDarkTheme()) PrimaryColor else PrimaryColor
+    val currentRoute =
+        remember { mutableStateOf(navController.currentBackStackEntry?.destination?.route) }
     val sections = listOf(
-        "Sales Summary",
-        "Summary Update",
-        "Brand Wise",
-        "Watchlist",
-        "News",
+        Pair("Sales Summary", R.drawable.stock_market),
+        Pair("Summary Update", R.drawable.stock_market),
+        Pair("Brand Wise", R.drawable.stock_market),
+        Pair("Watchlist", R.drawable.stock_market),
+        Pair("News", R.drawable.stock_market)
     )
-    val enableSwipingStates = remember { mutableStateListOf(true, true, true, true, true) }
-    val pagerState = rememberPagerState()
-    var reportSelectedSection by remember { mutableIntStateOf(0) }
+    val pagerState = rememberPagerState { sections.size }
+    val reportSelectedSection  = remember { mutableStateOf(0) }
     val (isSwipeEnabled, setIsSwipeEnabled) = remember { mutableStateOf(true) }
-    val (showAppBarAndReportSectionBar, setShowAppBarAndReportSectionBar) = remember { mutableStateOf(true) }
-    LaunchedEffect(pagerState) {
-        snapshotFlow { pagerState.currentPage }.collect { page ->
-            reportSelectedSection = page
-        }
-    }
-    LaunchedEffect(reportSelectedSection) {
-        pagerState.animateScrollToPage(reportSelectedSection)
+    val (showAppBarAndReportSectionBar, setShowAppBarAndReportSectionBar) = remember {
+        mutableStateOf(
+            true
+        )
     }
     Column {
         if (showAppBarAndReportSectionBar) {
             Surface(
-                modifier = Modifier.height(61.dp).zIndex(2f),
-                color = PrimaryColor,
+                modifier = Modifier
+                    .height(61.dp)
+                    .zIndex(2f),
+                color = SecondaryBackgroundColor,
             ) {
                 Box(modifier = Modifier.fillMaxSize()) {
                     MyAppBar(
@@ -87,21 +86,42 @@ fun HomeScreen (navController: NavHostController){
                         showArrow = false,
                     )
                 }
+
+            }
+
+            Surface(
+                color = SecondaryBackgroundColor,
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                SectionBar(
+                    tabs = sections,
+                    selectedTabIndex = reportSelectedSection.value,
+                    onTabClick = { index ->
+                        reportSelectedSection.value = index
+                    }
+                )
             }
 
         }
         Box(
             modifier = Modifier
                 .fillMaxSize()
-                .background(if (isSystemInDarkTheme()) BackgroundColor else Color(0xfff9f9f9)),
-        ){
+                .background(if (isSystemInDarkTheme()) BackgroundColor else SecondaryBackgroundColor),
+        ) {
             HorizontalPager(
-                count = sections.size,
                 state = pagerState,
                 modifier = Modifier.fillMaxSize(),
                 userScrollEnabled = isSwipeEnabled,
-            ){
-
+            ) { page ->
+                Box(Modifier.fillMaxSize()) {
+                    when (reportSelectedSection.value) {
+                        0 -> SalesSummeryScreen()
+                        1 -> SummaryUpdate()
+                        2 -> BrandWise()
+                        3 -> Watchlist()
+                        4 -> News()
+                    }
+                }
             }
         }
 
