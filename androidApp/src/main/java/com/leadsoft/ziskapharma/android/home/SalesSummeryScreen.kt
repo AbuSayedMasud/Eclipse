@@ -22,7 +22,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.leadsoft.ziskapharma.android.R
 import com.leadsoft.ziskapharma.android.theme.PrimaryColor
-import com.leadsoft.ziskapharma.android.theme.SecondaryText
 import com.leadsoft.ziskapharma.android.theme.ZiskaTheme
 import com.leadsoft.ziskapharma.android.theme.rememberWindowSizeClass
 

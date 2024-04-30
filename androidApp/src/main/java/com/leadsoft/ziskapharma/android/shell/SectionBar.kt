@@ -14,7 +14,10 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.* // ktlint-disable no-wildcard-imports
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -33,6 +36,7 @@ fun SectionBar(
     selectedTabIndex: Int,
     onTabClick: (Int) -> Unit,
 ) {
+    var iconCheckValue by mutableStateOf("false")
     LazyRow(
         modifier = Modifier
             .fillMaxWidth()
@@ -48,18 +52,22 @@ fun SectionBar(
                 modifier = Modifier.padding(horizontal = 10.dp, vertical = 10.dp),
                 onClick = { onTabClick(index) }
             ) {
-                Row(verticalAlignment = Alignment.CenterVertically) {
-                    IconButton(onClick = {onTabClick(index)}) {
-                        Image(
-                            painter = painterResource(id = imageResId),
-                            contentDescription = "Tab Image",
-                            modifier = Modifier
-                                .size(35.dp)
-                                .clip(CircleShape)
-                                .border(1.dp, Color.White, CircleShape)
-                                .background(Color(0xFF0062FF).copy(alpha = .05f)),
-                            contentScale = ContentScale.Fit
-                        )
+                Row(verticalAlignment = Alignment.CenterVertically,
+                    modifier = if (isSelected) Modifier.padding(start = 8.dp,end=8.dp,top=6.dp, bottom = 6.dp) else Modifier
+                ) {
+                    if (!isSelected) {
+                        IconButton(onClick = { onTabClick(index) }) {
+                            Image(
+                                painter = painterResource(id = imageResId),
+                                contentDescription = "Tab Image",
+                                modifier = Modifier
+                                    .size(35.dp)
+                                    .clip(CircleShape)
+                                    .border(1.dp, Color.White, CircleShape)
+                                    .background(Color(0xFF0062FF).copy(alpha = .05f)),
+                                contentScale = ContentScale.Fit
+                            )
+                        }
                     }
                     Text(
                         text = text,
