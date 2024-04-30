@@ -26,6 +26,8 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.leadsoft.ziskapharma.android.theme.BottomBarColor2
 import com.leadsoft.ziskapharma.android.theme.PrimaryColor
+import com.leadsoft.ziskapharma.android.theme.SecondarySelectedColor
+import com.leadsoft.ziskapharma.android.theme.secondarayColor
 import com.leadsoft.ziskapharma.android.theme.themeactivity.ColorSelectionViewModel
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter", "SuspiciousIndentation")
@@ -79,7 +81,7 @@ fun RowScope.AddItem(
 ) {
     val isDarkTheme = isSystemInDarkTheme()
     val selected = currentDestination?.hierarchy?.any { it.route == screen.route } == true
-    val unselectedIconTint = if (!selected) LocalContentColor.current.copy(alpha = 1f) else LocalContentColor.current
+    val unselectedIconTint =  LocalContentColor.current.copy(alpha = .6f)
 
     BottomNavigationItem(
         icon = {
@@ -93,7 +95,7 @@ fun RowScope.AddItem(
                 imageVector = ImageVector.vectorResource(id = icon),
                 contentDescription = "Navigation Icon",
                 modifier = modifier,
-                tint = if (selected) PrimaryColor else LocalContentColor.current.copy(alpha = 0.6f)
+                tint = if (selected) PrimaryColor else secondarayColor
             )
         },
         selected = selected,
