@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.kotlinAndroid)
+    id("org.jetbrains.kotlin.plugin.serialization") version "1.9.20"
+
 }
 
 android {
@@ -62,4 +64,6 @@ dependencies {
     implementation ("com.google.accompanist:accompanist-pager:0.30.0")
     implementation ("com.google.accompanist:accompanist-pager-indicators:0.30.0")
     implementation ("androidx.compose.foundation:foundation:1.6.6")
+    //json
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
 }

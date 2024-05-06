@@ -1,0 +1,142 @@
+[
+  {
+    "brand": "Brand1",
+    "budget": "10000",
+    "tpSale": "8000",
+    "ach": "80",
+    "netAch": "75"
+  },
+  {
+    "brand": "Brand2",
+    "budget": "15000",
+    "tpSale": "12000",
+    "ach": "80",
+    "netAch": "85"
+  },
+  {
+    "brand": "Brand3",
+    "budget": "12000",
+    "tpSale": "10000",
+    "ach": "83",
+    "netAch": "80"
+  },
+  {
+    "brand": "Brand4",
+    "budget": "20000",
+    "tpSale": "18000",
+    "ach": "90",
+    "netAch": "85"
+  },
+  {
+    "brand": "Brand5",
+    "budget": "25000",
+    "tpSale": "22000",
+    "ach": "88",
+    "netAch": "82"
+  },
+  {
+    "brand": "Brand6",
+    "budget": "18000",
+    "tpSale": "16000",
+    "ach": "89",
+    "netAch": "85"
+  },
+  {
+    "brand": "Brand7",
+    "budget": "30000",
+    "tpSale": "28000",
+    "ach": "93",
+    "netAch": "88"
+  },
+  {
+    "brand": "Brand8",
+    "budget": "22000",
+    "tpSale": "20000",
+    "ach": "91",
+    "netAch": "87"
+  },
+  {
+    "brand": "Brand9",
+    "budget": "28000",
+    "tpSale": "25000",
+    "ach": "89",
+    "netAch": "83"
+  },
+  {
+    "brand": "Brand10",
+    "budget": "35000",
+    "tpSale": "32000",
+    "ach": "91",
+    "netAch": "85"
+  },
+  {
+    "brand": "Brand11",
+    "budget": "40000",
+    "tpSale": "38000",
+    "ach": "95",
+    "netAch": "90"
+  },
+  {
+    "brand": "Brand12",
+    "budget": "42000",
+    "tpSale": "40000",
+    "ach": "95",
+    "netAch": "92"
+  },
+  {
+    "brand": "Brand13",
+    "budget": "50000",
+    "tpSale": "48000",
+    "ach": "96",
+    "netAch": "91"
+  },
+  {
+    "brand": "Brand14",
+    "budget": "55000",
+    "tpSale": "52000",
+    "ach": "94",
+    "netAch": "89"
+  },
+  {
+    "brand": "Brand15",
+    "budget": "60000",
+    "tpSale": "58000",
+    "ach": "97",
+    "netAch": "94"
+  },
+  {
+    "brand": "Brand16",
+    "budget": "62000",
+    "tpSale": "60000",
+    "ach": "96",
+    "netAch": "93"
+  },
+  {
+    "brand": "Brand17",
+    "budget": "65000",
+    "tpSale": "63000",
+    "ach": "97",
+    "netAch": "95"
+  },
+  {
+    "brand": "Brand18",
+    "budget": "70000",
+    "tpSale": "68000",
+    "ach": "97",
+    "netAch": "94"
+  },
+  {
+    "brand": "Brand19",
+    "budget": "75000",
+    "tpSale": "73000",
+    "ach": "98",
+    "netAch": "95"
+  },
+  {
+    "brand": "Brand20",
+    "budget": "80000",
+    "tpSale": "78000",
+    "ach": "98",
+    "netAch": "96"
+  }
+]
