@@ -1,139 +1,139 @@
 [
   {
-    "brand": "Brand1",
+    "brand": "Abiron 250",
     "budget": "10000",
     "tpSale": "8000",
     "ach": "80",
     "netAch": "75"
   },
   {
-    "brand": "Brand2",
+    "brand": "Acecol 100 Tab",
     "budget": "15000",
     "tpSale": "12000",
     "ach": "80",
     "netAch": "85"
   },
   {
-    "brand": "Brand3",
+    "brand": "Adorbis",
     "budget": "12000",
     "tpSale": "10000",
     "ach": "83",
     "netAch": "80"
   },
   {
-    "brand": "Brand4",
+    "brand": "Aggreno Capsule",
     "budget": "20000",
     "tpSale": "18000",
     "ach": "90",
     "netAch": "85"
   },
   {
-    "brand": "Brand5",
+    "brand": "Albamax DS",
     "budget": "25000",
     "tpSale": "22000",
     "ach": "88",
     "netAch": "82"
   },
   {
-    "brand": "Brand6",
+    "brand": "Alconil Mouthwash",
     "budget": "18000",
     "tpSale": "16000",
     "ach": "89",
     "netAch": "85"
   },
   {
-    "brand": "Brand7",
+    "brand": "Alfacort",
     "budget": "30000",
     "tpSale": "28000",
     "ach": "93",
     "netAch": "88"
   },
   {
-    "brand": "Brand8",
+    "brand": "Altrum Silver",
     "budget": "22000",
     "tpSale": "20000",
     "ach": "91",
     "netAch": "87"
   },
   {
-    "brand": "Brand9",
+    "brand": "Analac",
     "budget": "28000",
     "tpSale": "25000",
     "ach": "89",
     "netAch": "83"
   },
   {
-    "brand": "Brand10",
+    "brand": "Asnil",
     "budget": "35000",
     "tpSale": "32000",
     "ach": "91",
     "netAch": "85"
   },
   {
-    "brand": "Brand11",
+    "brand": "Avapag",
     "budget": "40000",
     "tpSale": "38000",
     "ach": "95",
     "netAch": "90"
   },
   {
-    "brand": "Brand12",
+    "brand": "Avatropag 20",
     "budget": "42000",
     "tpSale": "40000",
     "ach": "95",
     "netAch": "92"
   },
   {
-    "brand": "Brand13",
+    "brand": "Azithromax",
     "budget": "50000",
     "tpSale": "48000",
     "ach": "96",
     "netAch": "91"
   },
   {
-    "brand": "Brand14",
+    "brand": "Belinta ",
     "budget": "55000",
     "tpSale": "52000",
     "ach": "94",
     "netAch": "89"
   },
   {
-    "brand": "Brand15",
+    "brand": "Bilargo",
     "budget": "60000",
     "tpSale": "58000",
     "ach": "97",
     "netAch": "94"
   },
   {
-    "brand": "Brand16",
+    "brand": "Broxidil",
     "budget": "62000",
     "tpSale": "60000",
     "ach": "96",
     "netAch": "93"
   },
   {
-    "brand": "Brand17",
+    "brand": "Caldical 500 Tab",
     "budget": "65000",
     "tpSale": "63000",
     "ach": "97",
     "netAch": "95"
   },
   {
-    "brand": "Brand18",
+    "brand": "Caldical-D Tab",
     "budget": "70000",
     "tpSale": "68000",
     "ach": "97",
     "netAch": "94"
   },
   {
-    "brand": "Brand19",
+    "brand": "CARE-ON",
     "budget": "75000",
     "tpSale": "73000",
     "ach": "98",
     "netAch": "95"
   },
   {
-    "brand": "Brand20",
+    "brand": "Celoxib",
     "budget": "80000",
     "tpSale": "78000",
     "ach": "98",

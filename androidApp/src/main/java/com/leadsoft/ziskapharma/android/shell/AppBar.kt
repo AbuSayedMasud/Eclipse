@@ -145,7 +145,7 @@ fun MyAppBar(
                                 Icon(
                                     painter = painterResource(id =R.drawable.baseline_arrow_back_24),
                                     contentDescription = null,
-                                    tint = Color.White,
+                                    tint = PrimaryColor,
                                     modifier = Modifier.size(27.dp),
                                 )
                             }
@@ -213,7 +213,7 @@ fun MyAppBar(
                             text = title,
                             fontSize = 21.sp,
                             fontWeight = FontWeight.Bold,
-                            color = Color.White,
+                            color = PrimaryColor,
                             textAlign = TextAlign.Start,
                             modifier = Modifier
                                 .fillMaxWidth()

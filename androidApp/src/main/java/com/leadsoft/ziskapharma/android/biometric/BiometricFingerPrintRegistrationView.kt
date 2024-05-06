@@ -23,6 +23,7 @@ import androidx.compose.material.AlertDialog
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -41,6 +42,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.zIndex
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentActivity
 import androidx.navigation.NavHostController
@@ -55,6 +57,7 @@ import com.leadsoft.ziskapharma.android.shell.MyAppBar
 import com.leadsoft.ziskapharma.android.theme.AppTheme
 import com.leadsoft.ziskapharma.android.theme.BackgroundColor
 import com.leadsoft.ziskapharma.android.theme.PrimaryColor
+import com.leadsoft.ziskapharma.android.theme.SecondaryBackgroundColor
 import com.leadsoft.ziskapharma.android.theme.White
 import com.leadsoft.ziskapharma.android.theme.ZiskaTheme
 import com.leadsoft.ziskapharma.android.theme.getCardColors
@@ -114,19 +117,31 @@ fun BiometricFingerPrintRegistrationView(navController: NavHostController) {
     val window = rememberWindowSizeClass()
     ZiskaTheme(window) {
         Column {
-            MyAppBar(
-                navController = navController,
-                context = LocalContext.current,
-                title = "$title TouchID",
-                onSearch = { searchText ->
-                },
-                showSearchBar = false,
-                onProfileClick = onProfileClick,
-                profilePhoto = profilePhoto,
-                showNotificationIcon = false,
-                currentRoute = currentRoute,
-                showArrow = true,
-            )
+            Surface(
+                modifier = Modifier
+                    .height(61.dp)
+                    .zIndex(2f),
+                color = SecondaryBackgroundColor,
+            ) {
+                Box(modifier = Modifier.fillMaxSize()) {
+                    MyAppBar(
+                        navController = navController,
+                        context = LocalContext.current,
+                        title = title,
+                        onSearch = { searchText ->
+                            // What happens when the search button is clicked
+                        },
+                        showSearchBar = false,
+                        onProfileClick = onProfileClick,
+                        profilePhoto = profilePhoto,
+                        showSearchIcon = false,
+                        showNotificationIcon = false,
+                        currentRoute = currentRoute,
+                        showArrow = true,
+                    )
+                }
+
+            }
             Box(
                 modifier = Modifier
                     .fillMaxSize()
