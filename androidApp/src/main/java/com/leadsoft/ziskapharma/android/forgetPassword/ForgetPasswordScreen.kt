@@ -49,7 +49,7 @@ fun ForgetPasswordScreen(navController: NavHostController) {
                 MyAppBar(
                     navController = navController,
                     context = LocalContext.current,
-                    title = "Home",
+                    title = "Password Recovery",
                     onSearch = { searchText ->
                         // What happens when the search button is clicked
                     },
