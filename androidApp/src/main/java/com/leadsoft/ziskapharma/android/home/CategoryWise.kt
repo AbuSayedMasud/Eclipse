@@ -4,6 +4,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 
 @Composable
-fun Watchlist() {
-    Text(text = "hello4")
+fun CategoryWise() {
+    Text(text = "hello5")
 }

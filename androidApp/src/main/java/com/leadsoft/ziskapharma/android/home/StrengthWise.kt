@@ -4,6 +4,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 
 @Composable
-fun News() {
-    Text(text = "hello5")
+fun StrengthWise() {
+    Text(text = "hello4")
 }

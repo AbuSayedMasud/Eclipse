@@ -50,8 +50,8 @@ fun HomeScreen(navController: NavHostController) {
         Pair("Sales Summary", R.drawable.stock_market),
         Pair("Summary Update", R.drawable.stock_market),
         Pair("Brand Wise", R.drawable.stock_market),
-        Pair("Watchlist", R.drawable.stock_market),
-        Pair("News", R.drawable.stock_market)
+        Pair("Strength Wise", R.drawable.stock_market),
+        Pair("Category Wise", R.drawable.stock_market)
     )
     val pagerState = rememberPagerState { sections.size }
     val reportSelectedSection  = remember { mutableStateOf(0) }
@@ -118,8 +118,8 @@ fun HomeScreen(navController: NavHostController) {
                         0 -> SalesSummeryScreen()
                         1 -> SummaryUpdate()
                         2 -> BrandWise()
-                        3 -> Watchlist()
-                        4 -> News()
+                        3 -> StrengthWise()
+                        4 -> CategoryWise()
                     }
                 }
             }
