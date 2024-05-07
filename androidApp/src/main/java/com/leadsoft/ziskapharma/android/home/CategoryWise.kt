@@ -28,6 +28,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.leadsoft.ziskapharma.android.R
 import com.leadsoft.ziskapharma.android.api.brandwise.BrandWiseData
+import com.leadsoft.ziskapharma.android.api.brandwise.CategoryWiseData
+import com.leadsoft.ziskapharma.android.api.brandwise.SummeryData
 import com.leadsoft.ziskapharma.android.api.brandwise.Table
 import com.leadsoft.ziskapharma.android.home.common.ContentCell
 import com.leadsoft.ziskapharma.android.home.common.HeaderCell
@@ -39,10 +41,10 @@ import com.leadsoft.ziskapharma.android.theme.rememberWindowSizeClass
 @Composable
 fun CategoryWise(){
     val context: Context = LocalContext.current
-    val result: List<BrandWiseData> by remember {
-        mutableStateOf(RouteSearchHttpRepository(context).searchRoutes())
+    val result: List<CategoryWiseData> by remember {
+        mutableStateOf(RouteSearchHttpRepository(context).searchCategoryWise())
     }
-    val brandWiseResult: List<BrandWiseData> by remember {
+    val brandWiseResult: List<SummeryData> by remember {
         mutableStateOf(RouteSearchHttpRepository(context).searchBrandSummery())
     }
     val window = rememberWindowSizeClass()
@@ -51,7 +53,15 @@ fun CategoryWise(){
         "Budget",
         "TP Sale",
         "Ach %",
-        "Net Ach %",
+        "Net Sale",
+        "Ach %",
+    )
+    val summery = listOf(
+        "Budget",
+        "Tp Sales",
+        "TP Ach%",
+        "Net Sale",
+        "Net Ach%",
     )
     ZiskaTheme(window) {
         Column(
@@ -109,23 +119,23 @@ fun CategoryWise(){
                 ) {
                     Table(
                         modifier = Modifier,
-                        columnCount = headers.size,
+                        columnCount = summery.size,
                         rowCount = brandWiseResult.size + 1,
                         stickyRowCount = 1,
                         stickyColumnCount = 1,
                         maxCellWidthDp = 320.dp
                     ) { rowIndex, columnIndex ->
-                        val header = headers[columnIndex]
+                        val header = summery[columnIndex]
                         if (rowIndex == 0) {
                             HeaderCell(header)
                         } else {
                             val r = brandWiseResult[rowIndex - 1]
                             when (header) {
-                                "Brand" -> ContentCell(rowIndex, r.brand)
                                 "Budget" -> ContentCell(rowIndex, r.budget)
-                                "TP Sale" -> ContentCell(rowIndex, r.tpSale)
-                                "Ach %" -> ContentCell(rowIndex, r.ach)
-                                "Net Ach %" -> ContentCell(rowIndex, r.netAch)
+                                "Tp Sales" -> ContentCell(rowIndex, r.tpSales)
+                                "TP Ach%" -> ContentCell(rowIndex, r.tpAchievementPercentage)
+                                "Net Sale" -> ContentCell(rowIndex, r.netSale)
+                                "Net Ach%" -> ContentCell(rowIndex, r.netAchievementPercentage)
                             }
                         }
                     }
@@ -162,7 +172,8 @@ fun CategoryWise(){
                                 "Budget" -> ContentCell(rowIndex, r.budget)
                                 "TP Sale" -> ContentCell(rowIndex, r.tpSale)
                                 "Ach %" -> ContentCell(rowIndex, r.ach)
-                                "Net Ach %" -> ContentCell(rowIndex, r.netAch)
+                                "Net Sale" -> ContentCell(rowIndex, r.netSale)
+                                "Ach %" ->ContentCell(rowIndex, r.netAch)
 
                             }
                         }

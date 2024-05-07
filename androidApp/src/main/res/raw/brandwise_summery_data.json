@@ -1,9 +1,9 @@
 [
   {
-    "brand": "Abiron 250",
-    "budget": "10000",
-    "tpSale": "8000",
-    "ach": "80",
-    "netAch": "75"
+    "budget":"370,668",
+    "tpSales":"331,450",
+    "tpAchievementPercentage":"85",
+    "netSale":"316,453",
+    "netAchievementPercentage":"75"
   }
 ]

@@ -3,6 +3,8 @@ package com.leadsoft.ziskapharma.android.repository
 import android.annotation.SuppressLint
 import android.content.Context
 import com.leadsoft.ziskapharma.android.api.brandwise.BrandWiseData
+import com.leadsoft.ziskapharma.android.api.brandwise.CategoryWiseData
+import com.leadsoft.ziskapharma.android.api.brandwise.SummeryData
 import kotlinx.serialization.json.Json
 
 
@@ -16,18 +18,27 @@ class RouteSearchHttpRepository (private val context: Context){
     private val jsonBrandWiseSummery: String by lazy {
         loadJson("brandwise_summery_data")
     }
-    private val brandWiseSummery: List<BrandWiseData> by lazy {
-        Json.decodeFromString<List<BrandWiseData>>(jsonBrandWiseSummery)
+    private val jsonCategoryWise: String by lazy {
+        loadJson("category_wise")
+    }
+    private val brandWiseSummery: List<SummeryData> by lazy {
+        Json.decodeFromString<List<SummeryData>>(jsonBrandWiseSummery)
+    }
+    private val categoryWise: List<CategoryWiseData> by lazy {
+        Json.decodeFromString<List<CategoryWiseData>>(jsonCategoryWise)
     }
     // Deserialize JSON content into a list of BrandWiseData objects
     private val transactions: List<BrandWiseData> by lazy {
         Json.decodeFromString<List<BrandWiseData>>(jsonTransactionContent)
     }
-    fun searchBrandSummery(): List<BrandWiseData> {
+    fun searchBrandSummery(): List<SummeryData> {
         return brandWiseSummery
     }
     fun searchRoutes(): List<BrandWiseData> {
         return transactions
+    }
+    fun searchCategoryWise(): List<CategoryWiseData> {
+        return categoryWise
     }
 
     @SuppressLint("DiscouragedApi")
