@@ -28,6 +28,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.leadsoft.ziskapharma.android.R
 import com.leadsoft.ziskapharma.android.api.brandwise.BrandWiseData
+import com.leadsoft.ziskapharma.android.api.brandwise.StrengthWiseData
 import com.leadsoft.ziskapharma.android.api.brandwise.SummeryData
 import com.leadsoft.ziskapharma.android.api.brandwise.Table
 import com.leadsoft.ziskapharma.android.home.common.ContentCell
@@ -40,19 +41,19 @@ import com.leadsoft.ziskapharma.android.theme.rememberWindowSizeClass
 @Composable
 fun StrengthWise() {
     val context: Context = LocalContext.current
-    val result: List<BrandWiseData> by remember {
-        mutableStateOf(RouteSearchHttpRepository(context).searchRoutes())
+    val result: List<StrengthWiseData> by remember {
+        mutableStateOf(RouteSearchHttpRepository(context).searchStrengthWise())
     }
     val brandWiseResult: List<SummeryData> by remember {
         mutableStateOf(RouteSearchHttpRepository(context).searchBrandSummery())
     }
     val window = rememberWindowSizeClass()
     val headers = listOf(
-        "Brand",
-        "Budget",
-        "TP Sale",
+        "Product",
+        "Pack",
+        "B.Qty",
+        "S.Qty",
         "Ach %",
-        "Net Ach %",
     )
     val summery = listOf(
         "Budget",
@@ -166,11 +167,11 @@ fun StrengthWise() {
                             val r = result[rowIndex - 1]
                             when (header) {
 
-                                "Brand" -> ContentCell(rowIndex, r.brand)
-                                "Budget" -> ContentCell(rowIndex, r.budget)
-                                "TP Sale" -> ContentCell(rowIndex, r.tpSale)
+                                "Product" -> ContentCell(rowIndex, r.product)
+                                "Pack" -> ContentCell(rowIndex, r.pack)
+                                "B.Qty" -> ContentCell(rowIndex, r.bQty)
+                                "S.Qty" -> ContentCell(rowIndex, r.sQty)
                                 "Ach %" -> ContentCell(rowIndex, r.ach)
-                                "Net Ach %" -> ContentCell(rowIndex, r.netAch)
 
                             }
                         }

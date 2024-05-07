@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Context
 import com.leadsoft.ziskapharma.android.api.brandwise.BrandWiseData
 import com.leadsoft.ziskapharma.android.api.brandwise.CategoryWiseData
+import com.leadsoft.ziskapharma.android.api.brandwise.StrengthWiseData
 import com.leadsoft.ziskapharma.android.api.brandwise.SummeryData
 import kotlinx.serialization.json.Json
 
@@ -21,6 +22,9 @@ class RouteSearchHttpRepository (private val context: Context){
     private val jsonCategoryWise: String by lazy {
         loadJson("category_wise")
     }
+    private val jsonStrengthWise: String by lazy {
+        loadJson("strength_wise")
+    }
     private val brandWiseSummery: List<SummeryData> by lazy {
         Json.decodeFromString<List<SummeryData>>(jsonBrandWiseSummery)
     }
@@ -31,6 +35,9 @@ class RouteSearchHttpRepository (private val context: Context){
     private val transactions: List<BrandWiseData> by lazy {
         Json.decodeFromString<List<BrandWiseData>>(jsonTransactionContent)
     }
+    private val strengthWise: List<StrengthWiseData> by lazy {
+        Json.decodeFromString<List<StrengthWiseData>>(jsonStrengthWise)
+    }
     fun searchBrandSummery(): List<SummeryData> {
         return brandWiseSummery
     }
@@ -39,6 +46,9 @@ class RouteSearchHttpRepository (private val context: Context){
     }
     fun searchCategoryWise(): List<CategoryWiseData> {
         return categoryWise
+    }
+    fun searchStrengthWise(): List<StrengthWiseData> {
+        return strengthWise
     }
 
     @SuppressLint("DiscouragedApi")

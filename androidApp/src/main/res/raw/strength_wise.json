@@ -1,0 +1,142 @@
+[
+  {
+    "product": "Abiron 250",
+    "pack": "1x5's",
+    "bQty": "100",
+    "sQty": "80",
+    "ach": "80"
+  },
+  {
+    "product": "Acecol 100 Tab",
+    "pack": "1x5's",
+    "bQty": "50",
+    "sQty": "40",
+    "ach": "80"
+  },
+  {
+    "product": "Adorbis",
+    "pack": "2x5's",
+    "bQty": "200",
+    "sQty": "180",
+    "ach": "90"
+  },
+  {
+    "product": "Aggreno Capsule",
+    "pack": "1x5's",
+    "bQty": "150",
+    "sQty": "140",
+    "ach": "93.33"
+  },
+  {
+    "product": "Albamax DS",
+    "pack": "1x5's",
+    "bQty": "75",
+    "sQty": "70",
+    "ach": "93.33"
+  },
+  {
+    "product": "Alconil Mouthwash",
+    "pack": "2x5's",
+    "bQty": "300",
+    "sQty": "280",
+    "ach": "93.33"
+  },
+  {
+    "product": "Alfacort",
+    "pack": "1x5's",
+    "bQty": "120",
+    "sQty": "100",
+    "ach": "83.33"
+  },
+  {
+    "product": "Altrum Silver",
+    "pack": "1x5's",
+    "bQty": "80",
+    "sQty": "60",
+    "ach": "75"
+  },
+  {
+    "product": "Analac",
+    "pack": "2x5's",
+    "bQty": "180",
+    "sQty": "160",
+    "ach": "88.89"
+  },
+  {
+    "product": "Asnil",
+    "pack": "1x5's",
+    "bQty": "90",
+    "sQty": "85",
+    "ach": "94.44"
+  },
+  {
+    "product": "Avapag",
+    "pack": "1x5's",
+    "bQty": "40",
+    "sQty": "35",
+    "ach": "87.5"
+  },
+  {
+    "product": "Avatropag 20",
+    "pack": "2x5's",
+    "bQty": "240",
+    "sQty": "220",
+    "ach": "91.67"
+  },
+  {
+    "product": "Azithromax",
+    "pack": "1x5's",
+    "bQty": "200",
+    "sQty": "190",
+    "ach": "95"
+  },
+  {
+    "product": "Belinta",
+    "pack": "1x5's",
+    "bQty": "100",
+    "sQty": "90",
+    "ach": "90"
+  },
+  {
+    "product": "Bilargo",
+    "pack": "2x5's",
+    "bQty": "160",
+    "sQty": "150",
+    "ach": "93.75"
+  },
+  {
+    "product": "Broxidil",
+    "pack": "1x5's",
+    "bQty": "80",
+    "sQty": "70",
+    "ach": "87.5"
+  },
+  {
+    "product": "Caldical 500 Tab",
+    "pack": "1x5's",
+    "bQty": "60",
+    "sQty": "55",
+    "ach": "91.67"
+  },
+  {
+    "product": "Caldical-D Tab",
+    "pack": "2x5's",
+    "bQty": "220",
+    "sQty": "210",
+    "ach": "95.45"
+  },
+  {
+    "product": "CARE-ON",
+    "pack": "1x5's",
+    "bQty": "110",
+    "sQty": "100",
+    "ach": "90.91"
+  },
+  {
+    "product": "CARE-ON",
+    "pack": "1x5's",
+    "bQty": "70",
+    "sQty": "60",
+    "ach": "85.71"
+  }
+]
