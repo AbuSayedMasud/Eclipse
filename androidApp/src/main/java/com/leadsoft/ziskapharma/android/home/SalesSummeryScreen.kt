@@ -25,13 +25,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.leadsoft.ziskapharma.android.R
 import com.leadsoft.ziskapharma.android.api.brandwise.BrandWiseData
 import com.leadsoft.ziskapharma.android.api.brandwise.SummeryData
-import com.leadsoft.ziskapharma.android.api.brandwise.Table
+import com.leadsoft.ziskapharma.android.home.common.Table
 import com.leadsoft.ziskapharma.android.home.common.ContentCell
 import com.leadsoft.ziskapharma.android.home.common.HeaderCell
 import com.leadsoft.ziskapharma.android.repository.RouteSearchHttpRepository

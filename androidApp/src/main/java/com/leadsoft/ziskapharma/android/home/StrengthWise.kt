@@ -27,10 +27,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.leadsoft.ziskapharma.android.R
-import com.leadsoft.ziskapharma.android.api.brandwise.BrandWiseData
 import com.leadsoft.ziskapharma.android.api.brandwise.StrengthWiseData
 import com.leadsoft.ziskapharma.android.api.brandwise.SummeryData
-import com.leadsoft.ziskapharma.android.api.brandwise.Table
+import com.leadsoft.ziskapharma.android.home.common.Table
 import com.leadsoft.ziskapharma.android.home.common.ContentCell
 import com.leadsoft.ziskapharma.android.home.common.HeaderCell
 import com.leadsoft.ziskapharma.android.repository.RouteSearchHttpRepository
