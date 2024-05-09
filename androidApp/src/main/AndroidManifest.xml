@@ -3,7 +3,9 @@
 
     <application
         android:allowBackup="false"
+        android:usesCleartextTraffic="true"
         android:supportsRtl="true"
+        android:icon="@drawable/ziska_logo"
         android:theme="@style/AppTheme">
         <activity
             android:name=".activity.HomeActivity"

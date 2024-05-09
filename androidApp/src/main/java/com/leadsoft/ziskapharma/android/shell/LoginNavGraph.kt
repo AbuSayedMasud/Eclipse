@@ -10,11 +10,15 @@ import com.leadsoft.ziskapharma.android.biometric.BioMetricRegistrationScreen
 import com.leadsoft.ziskapharma.android.biometric.BiometricFingerPrintRegistrationView
 import com.leadsoft.ziskapharma.android.forgetPassword.ForgetPasswordScreen
 import com.leadsoft.ziskapharma.android.login.LoginScreen
+import com.leadsoft.ziskapharma.android.splash.SplashScreen
 
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable
 fun LoginNavGraph(navController: NavHostController){
-    NavHost(navController = navController, startDestination = "login") {
+    NavHost(navController = navController, startDestination = "splash") {
+        composable("splash") {
+            SplashScreen(navController)
+        }
         composable("login") {
             LoginScreen(navController)
         }
