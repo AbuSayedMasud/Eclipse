@@ -1,4 +1,4 @@
-package com.leadsoft.ziskapharma.android.api.brandwise
+package com.leadsoft.ziskapharma.android.home.common
 
 import androidx.compose.foundation.ScrollState
 import androidx.compose.foundation.horizontalScroll
@@ -13,7 +13,6 @@ import androidx.compose.ui.layout.Layout
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.Constraints
 import androidx.compose.ui.unit.Dp
-
 @Composable
 fun Table(
     modifier: Modifier = Modifier,

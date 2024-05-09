@@ -179,7 +179,8 @@ fun MyAppBar(
                         }
                     }
 
-                    if (currentRoute != null && currentRoute.value == BottomBar.Home.route) {
+//                    if (currentRoute != null && currentRoute.value == BottomBar.Home.route) {
+                    if(title=="Home"){
                         Box(
                             contentAlignment = Alignment.Center,
                             modifier = Modifier.align(Alignment.CenterVertically).fillMaxWidth()
