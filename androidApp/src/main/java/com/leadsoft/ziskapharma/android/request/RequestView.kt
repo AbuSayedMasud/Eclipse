@@ -54,14 +54,23 @@ fun RequestView(navController: NavHostController) {
             Card(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(top = paddingValue, start = paddingValue, end = paddingValue, bottom = 0.dp)
+                    .padding(
+                        top = paddingValue,
+                        start = paddingValue,
+                        end = paddingValue,
+                        bottom = 0.dp
+                    )
                     .clip(RoundedCornerShape(10.dp))
-                    .border(1.dp, Color(0xffd6d6d6), RoundedCornerShape(10.dp)), // Use the same shape for the border
+                    .border(
+                        1.dp,
+                        Color(0xffd6d6d6),
+                        RoundedCornerShape(10.dp)
+                    ), // Use the same shape for the border
                 elevation = if (isSystemInDarkTheme()) 8.dp else 8.dp,
                 shape = RoundedCornerShape(10.dp), // Ensure the shape matches the clip shape
                 backgroundColor = backgroundColor,
                 onClick = {
-
+                    navController.navigate("requestStatus")
                 }
 
             ) {
