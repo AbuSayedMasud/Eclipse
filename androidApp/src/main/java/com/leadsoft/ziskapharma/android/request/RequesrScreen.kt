@@ -7,7 +7,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.material.Surface
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -32,6 +31,7 @@ fun RequestScreen(navController: NavHostController) {
     val onProfileClick: () -> Unit = {
         // Handle the profile photo click event here
     }
+
     val currentRoute =
         remember { mutableStateOf(navController.currentBackStackEntry?.destination?.route) }
     Column {
@@ -45,7 +45,7 @@ fun RequestScreen(navController: NavHostController) {
                 MyAppBar(
                     navController = navController,
                     context = LocalContext.current,
-                    title = "Home",
+                    title = "Request",
                     onSearch = { searchText ->
                         // What happens when the search button is clicked
                     },
@@ -68,7 +68,7 @@ fun RequestScreen(navController: NavHostController) {
                     .fillMaxSize()
                     .background(if (isSystemInDarkTheme()) BackgroundColor else Color(0xfff9f9f9))
             ) {
-                Text(text = "Request")
+               RequestView(navController)
             }
         }
     }
