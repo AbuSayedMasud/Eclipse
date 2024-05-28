@@ -55,9 +55,9 @@ fun RequestView(navController: NavHostController) {
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(
-                        top = paddingValue,
-                        start = paddingValue,
-                        end = paddingValue,
+                        top = 16.dp,
+                        start = 16.dp,
+                        end = 16.dp,
                         bottom = 0.dp
                     )
                     .clip(RoundedCornerShape(10.dp))
@@ -70,7 +70,11 @@ fun RequestView(navController: NavHostController) {
                 shape = RoundedCornerShape(10.dp), // Ensure the shape matches the clip shape
                 backgroundColor = backgroundColor,
                 onClick = {
-                    navController.navigate("requestStatus")
+                    if (serviceItem.text == "Credit Customer Request") {
+                        navController.navigate("creditCustomerRequest")
+                    } else {
+                        navController.navigate("requestStatus")
+                    }
                 }
 
             ) {
