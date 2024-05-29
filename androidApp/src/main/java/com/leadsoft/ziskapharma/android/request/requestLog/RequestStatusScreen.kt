@@ -93,7 +93,7 @@ fun RequestStatusScreen(navController: NavHostController) {
             Box(
                 modifier = Modifier
                     .fillMaxSize()
-                    .background(if (isSystemInDarkTheme()) BackgroundColor else Color(0xfff9f9f9)).padding(bottom=80.dp)
+                    .background(if (isSystemInDarkTheme()) BackgroundColor else Color(0xfff9f9f9))
             ) {
                 LazyColumn {
                     item { RequestStatusView() }
