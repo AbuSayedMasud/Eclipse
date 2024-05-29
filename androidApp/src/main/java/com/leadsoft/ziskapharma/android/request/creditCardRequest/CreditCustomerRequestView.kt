@@ -128,7 +128,7 @@ fun CreditCustomerRequestView() {
             PieCharT()
         }
         CustomCard()
-
+        EffectiveCard()
     }
 }
 

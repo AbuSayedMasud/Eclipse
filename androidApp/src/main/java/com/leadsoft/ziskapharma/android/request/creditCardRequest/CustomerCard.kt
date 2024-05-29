@@ -38,7 +38,6 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.graphics.toColorInt
-import com.leadsoft.ziskapharma.android.theme.SecondaryBackgroundColor
 import com.leadsoft.ziskapharma.android.theme.White
 import com.leadsoft.ziskapharma.android.theme.getCardColors
 import com.leadsoft.ziskapharma.android.theme.secondarayColor
@@ -55,14 +54,14 @@ fun CustomCard() {
     val chemistOptions = listOf("Add", "Edit", "Delete")
     val (backgroundColor, contentColor) = getCardColors()
     val placeholderTextColor =
-        if (isSystemInDarkTheme()) Color(0x83F1F3F4) else androidx.compose.ui.graphics.Color.DarkGray
+        if (isSystemInDarkTheme()) Color(0x83F1F3F4) else Color.DarkGray
     Card(
         modifier = Modifier
             .fillMaxWidth()
             .padding(horizontal = 16.dp, vertical = 10.dp),
         shape = RoundedCornerShape(10.dp),
         elevation = CardDefaults.cardElevation(10.dp),
-        colors = CardDefaults.cardColors(Color("#FAFAFA".toColorInt()))
+        colors = CardDefaults.cardColors(backgroundColor)
     ) {
         Column(
             modifier = Modifier.padding(16.dp) // Add padding inside the card
@@ -71,7 +70,7 @@ fun CustomCard() {
                 text = "Customer Type & Chemist",
                 fontWeight = FontWeight.Bold,
                 fontSize = 16.sp,
-                color = Color.Black,
+                color = contentColor,
                 modifier = Modifier.padding(bottom = 8.dp)
             )
             Row(
