@@ -1,4 +1,4 @@
-package com.leadsoft.ziskapharma.android.request.creditCardRequest
+package com.leadsoft.ziskapharma.android.request.discountCustomerRequest
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -45,7 +45,7 @@ import com.leadsoft.ziskapharma.android.theme.secondarayColor
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
-fun CustomCard() {
+fun DiscountCustomerCustomCard() {
     val typeOptions = listOf("Add", "Edit", "Delete")
     var typeExpanded by remember { mutableStateOf(false) }
     var typeSelectedOption by remember { mutableStateOf("Type") }
@@ -84,7 +84,7 @@ fun CustomCard() {
                     modifier = Modifier.weight(1f)
                 ) {
                     Card(
-                        modifier = Modifier.size(40.dp),
+                        modifier = Modifier.size(45.dp),
                         colors = CardDefaults.cardColors(Color.Blue)
                     ) {
                         // Content inside the Card, if any
@@ -221,6 +221,64 @@ fun CustomCard() {
                             }
                         }
                     }
+                    Spacer(modifier = Modifier.height(8.dp))
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.Center
+                    ) {
+                        Column(
+                            verticalArrangement = Arrangement.Center,
+                            horizontalAlignment = Alignment.CenterHorizontally,
+                            modifier = Modifier.weight(2f)
+                        ) {
+                            Button(
+                                onClick = {
+
+                                }, modifier = Modifier
+                                    .fillMaxWidth(),
+                                colors = ButtonDefaults.buttonColors(
+                                    backgroundColor = secondarayColor,
+                                    contentColor = White,
+                                ), shape = RoundedCornerShape(10.dp)
+                            ) {
+
+                                Text(
+                                    text = "Chemist Details",
+                                    fontSize = 11.sp,
+                                    modifier = Modifier.padding(5.dp),
+                                    color = White,
+                                )
+                            }
+                        }
+                        Spacer(modifier = Modifier.width(4.dp))
+                        Column(
+                            verticalArrangement = Arrangement.Center,
+                            horizontalAlignment = Alignment.CenterHorizontally,
+                            modifier = Modifier.weight(2f)
+                        ) {
+                            Button(
+                                onClick = {
+
+                                }, modifier = Modifier
+                                    .fillMaxWidth(),
+
+                                colors = ButtonDefaults.buttonColors(
+                                    backgroundColor = secondarayColor,
+                                    contentColor = White,
+                                ), shape = RoundedCornerShape(10.dp)
+                            ) {
+
+                                Text(
+                                    text = "Other Service",
+                                    fontSize = 11.sp,
+                                    modifier = Modifier.padding(5.dp),
+                                    color = White,
+                                )
+                            }
+                        }
+                    }
+
                 }
             }
         }

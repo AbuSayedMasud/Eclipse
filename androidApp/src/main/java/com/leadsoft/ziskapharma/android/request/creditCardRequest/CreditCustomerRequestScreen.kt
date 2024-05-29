@@ -65,7 +65,7 @@ fun CreditCustomerRequestScreen(navController: NavHostController) {
                     showSearchIcon = false,
                     showNotificationIcon = true,
                     currentRoute = currentRoute,
-                    showArrow = false,
+                    showArrow = true,
                 )
             }
 

@@ -12,6 +12,7 @@ import com.leadsoft.ziskapharma.android.profile.ProfileScreen
 import com.leadsoft.ziskapharma.android.request.RequestScreen
 import com.leadsoft.ziskapharma.android.request.requestLog.RequestStatusScreen
 import com.leadsoft.ziskapharma.android.request.creditCardRequest.CreditCustomerRequestScreen
+import com.leadsoft.ziskapharma.android.request.discountCustomerRequest.DiscountCustomerRequestScreen
 import com.leadsoft.ziskapharma.android.service.ServiceScreen
 import com.leadsoft.ziskapharma.android.theme.themeactivity.ColorSelectionViewModel
 
@@ -46,6 +47,9 @@ fun BottomNavGraph(navController: NavHostController) {
         }
         composable("creditCustomerRequest") {
             CreditCustomerRequestScreen( navController = navController,)
+        }
+        composable("discountCustomerRequest") {
+            DiscountCustomerRequestScreen( navController = navController)
         }
         composable(BottomBar.Profile.route) {
             ProfileScreen(

@@ -21,6 +21,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.res.painterResource
@@ -45,9 +46,9 @@ fun RequestView(navController: NavHostController) {
         10.dp
     }
     val requestItems = listOf(
-        RequestItem("Credit Customer Request", R.drawable.credit_customer_request),
-        RequestItem("Discount Customer Request", R.drawable.discount_customer_request),
-        RequestItem("Request Log", R.drawable.request_icon)
+        RequestItem("Credit Customer Request", R.drawable.request),
+        RequestItem("Discount Customer Request", R.drawable.request),
+        RequestItem("Request Log", R.drawable.request)
     )
     LazyColumn {
         items(requestItems) { serviceItem ->
@@ -70,10 +71,18 @@ fun RequestView(navController: NavHostController) {
                 shape = RoundedCornerShape(10.dp), // Ensure the shape matches the clip shape
                 backgroundColor = backgroundColor,
                 onClick = {
-                    if (serviceItem.text == "Credit Customer Request") {
-                        navController.navigate("creditCustomerRequest")
-                    } else {
-                        navController.navigate("requestStatus")
+                    when (serviceItem.text) {
+                        "Credit Customer Request" -> {
+                            navController.navigate("creditCustomerRequest")
+                        }
+
+                        "Discount Customer Request" -> {
+                            navController.navigate("discountCustomerRequest")
+                        }
+
+                        else -> {
+                            navController.navigate("requestStatus")
+                        }
                     }
                 }
 
@@ -93,6 +102,7 @@ fun RequestView(navController: NavHostController) {
                         Image(
                             painter = painterResource(serviceItem.iconResId),
                             contentDescription = null,
+                            colorFilter = ColorFilter.tint(Color.Black)
                         )
 
                     }

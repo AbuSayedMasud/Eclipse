@@ -1,9 +1,5 @@
-package com.leadsoft.ziskapharma.android.request.creditCardRequest
+package com.leadsoft.ziskapharma.android.request.discountCustomerRequest
 
-import android.content.Intent
-import android.util.Log
-import android.widget.Toast
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.isSystemInDarkTheme
@@ -19,7 +15,6 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
 import androidx.compose.material3.Card
@@ -31,16 +26,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.graphics.toColorInt
-import com.leadsoft.ziskapharma.android.R
-import com.leadsoft.ziskapharma.android.activity.HomeActivity
 import com.leadsoft.ziskapharma.android.api.PieChartData
-import com.leadsoft.ziskapharma.android.biometric.BioMetricPrompt
 import com.leadsoft.ziskapharma.android.request.pieChart.PieChartCompose
 import com.leadsoft.ziskapharma.android.theme.AppTheme
 import com.leadsoft.ziskapharma.android.theme.PrimaryColor
@@ -49,7 +39,7 @@ import com.leadsoft.ziskapharma.android.theme.getCardColors
 import com.leadsoft.ziskapharma.android.theme.secondarayColor
 
 @Composable
-fun CreditCustomerRequestView() {
+fun DiscountCustomerRequestView() {
     val (backgroundColor, contentColor) = getCardColors()
     val paddingValue = if (isSystemInDarkTheme()) {
         6.dp
@@ -143,9 +133,9 @@ fun CreditCustomerRequestView() {
         ) {
             PieCharT()
         }
-        CustomCard()
-        EffectiveCard()
-        CommentsView()
+        DiscountCustomerCustomCard()
+        DiscountCustomerEffectiveCard()
+        DiscountCustomerCommentsView()
         Row(
             modifier = Modifier
                 .fillMaxWidth()
@@ -240,8 +230,8 @@ fun PieCharT(modifier: Modifier = Modifier) {
         PieChartData(label = "Remaining", value = 120),
         PieChartData(label = "30% Tg", value = 110),
         PieChartData(label = "Achievement", value = 170),
-//        PieChartData(label = "Type", value = 120),
-//        PieChartData(label = "Class", value = 130),
+        PieChartData(label = "Type", value = 120),
+        PieChartData(label = "Class", value = 130),
     )
 
     Column(
