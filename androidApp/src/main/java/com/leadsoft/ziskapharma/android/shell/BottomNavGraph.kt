@@ -3,8 +3,6 @@ package com.leadsoft.ziskapharma.android.shell
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.ui.graphics.painter.Painter
-import androidx.compose.ui.res.painterResource
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
@@ -12,10 +10,9 @@ import androidx.navigation.compose.composable
 import com.leadsoft.ziskapharma.android.home.HomeScreen
 import com.leadsoft.ziskapharma.android.profile.ProfileScreen
 import com.leadsoft.ziskapharma.android.request.RequestScreen
-import com.leadsoft.ziskapharma.android.request.RequestStatusScreen
+import com.leadsoft.ziskapharma.android.request.requestLog.RequestStatusScreen
 import com.leadsoft.ziskapharma.android.request.creditCardRequest.CreditCustomerRequestScreen
 import com.leadsoft.ziskapharma.android.service.ServiceScreen
-import com.leadsoft.ziskapharma.android.shell.BottomBar
 import com.leadsoft.ziskapharma.android.theme.themeactivity.ColorSelectionViewModel
 
 
