@@ -37,7 +37,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.core.graphics.toColorInt
 import com.leadsoft.ziskapharma.android.theme.White
 import com.leadsoft.ziskapharma.android.theme.getCardColors
 import com.leadsoft.ziskapharma.android.theme.secondarayColor
