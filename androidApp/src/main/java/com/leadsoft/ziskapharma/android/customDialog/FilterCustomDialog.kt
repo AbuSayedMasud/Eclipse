@@ -1,5 +1,6 @@
 package com.leadsoft.ziskapharma.android.customDialog
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
@@ -187,19 +188,34 @@ fun FilterCustomDialog(
                                             verticalAlignment = Alignment.CenterVertically,
                                             modifier = Modifier.padding(bottom = 10.dp)
                                         ) {
-                                            Text(
-                                                text = "Approved",
-                                                style = MaterialTheme.typography.body1.copy(
-                                                    fontWeight = FontWeight.Bold,
-                                                    fontSize = 14.sp,
-                                                    color = Color(0xff32c1b6),
-                                                    textAlign = TextAlign.Center
-                                                ),
-                                                modifier = Modifier.padding(
-                                                    top = 8.dp,
-                                                    bottom = 8.dp
+                                            Column(
+                                                verticalArrangement = Arrangement.Center,
+                                                horizontalAlignment = Alignment.CenterHorizontally
+                                            ) {
+                                                Text(
+                                                    text = "Req. Date",
+                                                    style = MaterialTheme.typography.body1.copy(
+                                                        fontWeight = FontWeight.Bold,
+                                                        fontSize = 12.sp,
+                                                        color = contentColor,
+                                                        textAlign = TextAlign.Center
+                                                    ),
+                                                    modifier = Modifier.padding(
+                                                        top = 8.dp,
+
+                                                        )
                                                 )
-                                            )
+                                                Text(
+                                                    text = "Jan-23",
+                                                    style = MaterialTheme.typography.body1.copy(
+                                                        fontWeight = FontWeight.Bold,
+                                                        fontSize = 12.sp,
+                                                        color = Color.Red,
+                                                        textAlign = TextAlign.Center
+                                                    ),
+                                                )
+                                            }
+
 
                                         }
                                         Row(
@@ -207,78 +223,41 @@ fun FilterCustomDialog(
                                             verticalAlignment = Alignment.CenterVertically,
                                             modifier = Modifier.padding(bottom = 10.dp)
                                         ) {
-                                            Text(
-                                                text = "Approved",
-                                                style = MaterialTheme.typography.body1.copy(
-                                                    fontWeight = FontWeight.Bold,
-                                                    fontSize = 14.sp,
-                                                    color = Color(0xff32c1b6),
-                                                    textAlign = TextAlign.Center
-                                                ),
-                                                modifier = Modifier.padding(
-                                                    top = 8.dp,
-                                                    bottom = 8.dp
+                                            Column(
+                                                verticalArrangement = Arrangement.Center,
+                                                horizontalAlignment = Alignment.CenterHorizontally
+                                            ) {
+                                                Text(
+                                                    text = "Req. Type",
+                                                    style = MaterialTheme.typography.body1.copy(
+                                                        fontWeight = FontWeight.Bold,
+                                                        fontSize = 12.sp,
+                                                        color = contentColor,
+                                                        textAlign = TextAlign.Center
+                                                    ),
+                                                    modifier = Modifier.padding(
+                                                        top = 8.dp,
+
+                                                        )
                                                 )
-                                            )
-                                        }
-                                    }
-                                    Divider(
-                                        color = Color.LightGray,
-                                        modifier = Modifier
-                                            .width(1.dp).height(40.dp)
-                                            .padding(start = 4.dp, end = 4.dp)
-                                    )
-                                    Column(
-                                        verticalArrangement = Arrangement.Center,
-                                        horizontalAlignment = Alignment.CenterHorizontally,
-                                        modifier = Modifier.weight(2f)
-                                    ) {
-                                        Row(
-                                            horizontalArrangement = Arrangement.Center,
-                                            verticalAlignment = Alignment.CenterVertically,
-                                            modifier = Modifier.padding(bottom = 10.dp)
-                                        ) {
-                                            Text(
-                                                text = "Approved",
-                                                style = MaterialTheme.typography.body1.copy(
-                                                    fontWeight = FontWeight.Bold,
-                                                    fontSize = 14.sp,
-                                                    color = Color(0xff32c1b6),
-                                                    textAlign = TextAlign.Center
-                                                ),
-                                                modifier = Modifier.padding(
-                                                    top = 8.dp,
-                                                    bottom = 8.dp
+                                                Text(
+                                                    text = "DR",
+                                                    style = MaterialTheme.typography.body1.copy(
+                                                        fontWeight = FontWeight.Bold,
+                                                        fontSize = 12.sp,
+                                                        color = contentColor,
+                                                        textAlign = TextAlign.Center
+                                                    ),
                                                 )
-                                            )
+                                            }
 
                                         }
-                                        Row(
-                                            horizontalArrangement = Arrangement.Center,
-                                            verticalAlignment = Alignment.CenterVertically,
-                                            modifier = Modifier.padding(bottom = 10.dp)
-                                        ) {
-                                            Text(
-                                                text = "Approved",
-                                                style = MaterialTheme.typography.body1.copy(
-                                                    fontWeight = FontWeight.Bold,
-                                                    fontSize = 14.sp,
-                                                    color = Color(0xff32c1b6),
-                                                    textAlign = TextAlign.Center
-                                                ),
-                                                modifier = Modifier.padding(
-                                                    top = 8.dp,
-                                                    bottom = 8.dp
-                                                )
-                                            )
-                                        }
                                     }
-                                    Divider(
-                                        color = Color.LightGray,
+                                    Box(
                                         modifier = Modifier
-                                            .height(40.dp)
                                             .width(1.dp)
-                                            .padding(start = 4.dp, end = 4.dp)
+                                            .height(150.dp)
+                                            .background(Color.LightGray)
                                     )
                                     Column(
                                         verticalArrangement = Arrangement.Center,
@@ -290,45 +269,153 @@ fun FilterCustomDialog(
                                             verticalAlignment = Alignment.CenterVertically,
                                             modifier = Modifier.padding(bottom = 10.dp)
                                         ) {
-                                            Text(
-                                                text = "Approved",
-                                                style = MaterialTheme.typography.body1.copy(
-                                                    fontWeight = FontWeight.Bold,
-                                                    fontSize = 14.sp,
-                                                    color = Color(0xff32c1b6),
-                                                    textAlign = TextAlign.Center
-                                                ),
-                                                modifier = Modifier.padding(
-                                                    top = 8.dp,
-                                                    bottom = 8.dp
-                                                )
-                                            )
+                                            Column(
+                                                verticalArrangement = Arrangement.Center,
+                                                horizontalAlignment = Alignment.CenterHorizontally
+                                            ) {
+                                                Text(
+                                                    text = "Eff. Date",
+                                                    style = MaterialTheme.typography.body1.copy(
+                                                        fontWeight = FontWeight.Bold,
+                                                        fontSize = 12.sp,
+                                                        color = contentColor,
+                                                        textAlign = TextAlign.Center
+                                                    ),
+                                                    modifier = Modifier.padding(
+                                                        top = 8.dp,
 
+                                                        )
+                                                )
+                                                Text(
+                                                    text = "Dec-23",
+                                                    style = MaterialTheme.typography.body1.copy(
+                                                        fontWeight = FontWeight.Bold,
+                                                        fontSize = 12.sp,
+                                                        color = Color(0xff32c1b6),
+                                                        textAlign = TextAlign.Center
+                                                    ),
+
+                                                    )
+
+                                            }
                                         }
                                         Row(
                                             horizontalArrangement = Arrangement.Center,
                                             verticalAlignment = Alignment.CenterVertically,
                                             modifier = Modifier.padding(bottom = 10.dp)
                                         ) {
-                                            Text(
-                                                text = "Approved",
-                                                style = MaterialTheme.typography.body1.copy(
-                                                    fontWeight = FontWeight.Bold,
-                                                    fontSize = 14.sp,
-                                                    color = Color(0xff32c1b6),
-                                                    textAlign = TextAlign.Center
-                                                ),
-                                                modifier = Modifier.padding(
-                                                    top = 8.dp,
-                                                    bottom = 8.dp
+                                            Column(
+                                                verticalArrangement = Arrangement.Center,
+                                                horizontalAlignment = Alignment.CenterHorizontally
+                                            ) {
+                                                Text(
+                                                    text = "Comments",
+                                                    style = MaterialTheme.typography.body1.copy(
+                                                        fontWeight = FontWeight.Bold,
+                                                        fontSize = 12.sp,
+                                                        color = contentColor,
+                                                        textAlign = TextAlign.Center
+                                                    ),
+                                                    modifier = Modifier.padding(
+                                                        top = 8.dp,
+                                                    )
                                                 )
-                                            )
+                                                Text(
+                                                    text = "Yes,No",
+                                                    style = MaterialTheme.typography.body1.copy(
+                                                        fontWeight = FontWeight.Bold,
+                                                        fontSize = 12.sp,
+                                                        color = contentColor,
+                                                        textAlign = TextAlign.Center
+                                                    ),
+
+                                                    )
+                                            }
+                                        }
+                                    }
+                                    Box(
+                                        modifier = Modifier
+                                            .width(1.dp)
+                                            .height(150.dp)
+                                            .background(Color.LightGray)
+                                    )
+                                    Column(
+                                        verticalArrangement = Arrangement.Center,
+                                        horizontalAlignment = Alignment.CenterHorizontally,
+                                        modifier = Modifier.weight(2f)
+                                    ) {
+                                        Row(
+                                            horizontalArrangement = Arrangement.Center,
+                                            verticalAlignment = Alignment.CenterVertically,
+                                            modifier = Modifier.padding(bottom = 10.dp)
+                                        ) {
+                                            Column(
+                                                verticalArrangement = Arrangement.Center,
+                                                horizontalAlignment = Alignment.CenterHorizontally
+                                            ) {
+                                                Text(
+                                                    text = "Cr. Amount",
+                                                    style = MaterialTheme.typography.body1.copy(
+                                                        fontWeight = FontWeight.Bold,
+                                                        fontSize = 12.sp,
+                                                        color = contentColor,
+                                                        textAlign = TextAlign.Center
+                                                    ),
+                                                    modifier = Modifier.padding(
+                                                        top = 8.dp,
+                                                    )
+                                                )
+                                                Text(
+                                                    text = "10,000",
+                                                    style = MaterialTheme.typography.body1.copy(
+                                                        fontWeight = FontWeight.Bold,
+                                                        fontSize = 12.sp,
+                                                        color = Color(0xff32c1b6),
+                                                        textAlign = TextAlign.Center
+                                                    ),
+
+                                                    )
+                                            }
+                                        }
+                                        Row(
+                                            horizontalArrangement = Arrangement.Center,
+                                            verticalAlignment = Alignment.CenterVertically,
+                                            modifier = Modifier.padding(bottom = 10.dp)
+                                        ) {
+                                            Column(
+                                                verticalArrangement = Arrangement.Center,
+                                                horizontalAlignment = Alignment.CenterHorizontally
+                                            ) {
+                                                Text(
+                                                    text = "Approval Name",
+                                                    style = MaterialTheme.typography.body1.copy(
+                                                        fontWeight = FontWeight.Bold,
+                                                        fontSize = 12.sp,
+                                                        color = contentColor,
+                                                        textAlign = TextAlign.Center
+                                                    ),
+                                                    modifier = Modifier.padding(
+                                                        top = 8.dp,
+
+                                                        )
+                                                )
+                                                Text(
+                                                    text = "Md Razzak",
+                                                    style = MaterialTheme.typography.body1.copy(
+                                                        fontWeight = FontWeight.Bold,
+                                                        fontSize = 12.sp,
+                                                        color = contentColor,
+                                                        textAlign = TextAlign.Center
+                                                    ),
+
+                                                    )
+                                            }
+
                                         }
                                     }
                                 }
                             }
                         }
-
                     }
                 }
             }
