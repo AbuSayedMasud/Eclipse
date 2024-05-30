@@ -154,7 +154,7 @@ fun CustomCard() {
                                             typeSelectedOption = selectionOption
                                             typeExpanded = false
                                         }) {
-                                            Text(text = selectionOption)
+                                            Text(text = selectionOption,color = contentColor)
                                         }
                                     }
                                 }
@@ -214,7 +214,7 @@ fun CustomCard() {
                                             chemistSelectedOption = selectionOption
                                             chemistExpanded = false
                                         }) {
-                                            Text(text = selectionOption)
+                                            Text(text = selectionOption,color = contentColor)
                                         }
                                     }
                                 }

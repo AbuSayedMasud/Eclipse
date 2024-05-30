@@ -1,5 +1,7 @@
 package com.leadsoft.ziskapharma.android.request.discountCustomerRequest
 
+import android.app.DatePickerDialog
+import android.widget.DatePicker
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.isSystemInDarkTheme
@@ -27,23 +29,39 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.TextRange
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.leadsoft.ziskapharma.android.R
 import com.leadsoft.ziskapharma.android.formatnumber.isWithinMaxCharLimit
 import com.leadsoft.ziskapharma.android.theme.getCardColors
+import java.text.SimpleDateFormat
+import java.util.Calendar
+import java.util.Locale
 
 @Composable
 fun DiscountCustomerEffectiveCard() {
+    val context = LocalContext.current
+    val focusManager = LocalFocusManager.current
+    val calendar = Calendar.getInstance()
+    val year = calendar.get(Calendar.YEAR)
+    val month = calendar.get(Calendar.MONTH)
+    val day = calendar.get(Calendar.DAY_OF_MONTH)
     val (backgroundColor, contentColor) = getCardColors()
     val placeholderTextColor =
         if (isSystemInDarkTheme()) Color(0x83F1F3F4) else Color.DarkGray
     var creditAmount by remember { mutableStateOf("") }
-    var fromDate by remember { mutableStateOf("") }
-    var toDate by remember { mutableStateOf("") }
+    var fromDate by remember { mutableStateOf(TextFieldValue("")) }
+    var showDialog by remember { mutableStateOf(false) }
+    var showDialogTo by remember { mutableStateOf(false) }
+    val dateFormat = remember { SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()) }
+    var toDate by remember { mutableStateOf(TextFieldValue("")) }
     val isDarkTheme = isSystemInDarkTheme()
     val textColor = if (isDarkTheme) Color.White else Color.Black
     var isFromDateError by remember {
@@ -53,6 +71,57 @@ fun DiscountCustomerEffectiveCard() {
         mutableStateOf(false)
     }
     val isCreditAmount by remember { mutableStateOf(false) }
+    if (showDialog) {
+        DatePickerDialog(
+            context,
+            { _: DatePicker, selectedYear: Int, selectedMonth: Int, selectedDay: Int ->
+                calendar.set(selectedYear, selectedMonth, selectedDay)
+                val formattedDate = dateFormat.format(calendar.time)
+                fromDate = TextFieldValue(formattedDate, TextRange(formattedDate.length))
+                showDialog = false
+                focusManager.clearFocus()
+            },
+            year,
+            month,
+            day
+        ).show()
+        showDialog = false
+        focusManager.clearFocus() // Clear focus after date is set
+    }
+    if (showDialogTo) {
+        DatePickerDialog(
+            context,
+            { _: DatePicker, selectedYear: Int, selectedMonth: Int, selectedDay: Int ->
+                calendar.set(selectedYear, selectedMonth, selectedDay)
+                val formattedDate = dateFormat.format(calendar.time)
+                toDate= TextFieldValue(formattedDate, TextRange(formattedDate.length))
+                showDialogTo = false
+                focusManager.clearFocus()
+            },
+            year,
+            month,
+            day
+        ).show()
+        showDialogTo = false
+        focusManager.clearFocus() // Clear focus after date is set
+    }
+    fun formatInput(input: String, cursorPosition: Int): Pair<String, Int> {
+        val digitsOnly = input.filter { it.isDigit() }.take(8) // Limit to 8 digits
+        val formatted = StringBuilder()
+        var newCursorPosition = cursorPosition
+
+        for (i in digitsOnly.indices) {
+            if (i == 2 || i == 4) {
+                formatted.append('/')
+                if (cursorPosition > i) {
+                    newCursorPosition++
+                }
+            }
+            formatted.append(digitsOnly[i])
+        }
+
+        return formatted.toString() to newCursorPosition.coerceAtMost(formatted.length)
+    }
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -119,11 +188,12 @@ fun DiscountCustomerEffectiveCard() {
                 ) {
                     TextField(
                         value = fromDate,
-                        onValueChange = {
-                            if (isWithinMaxCharLimit(it, 10)) {
-                                fromDate = it
-                                isFromDateError = it.isEmpty()
-                            }
+                        onValueChange = {newValue ->
+                            val (formattedText, newCursorPosition) = formatInput(
+                                newValue.text,
+                                newValue.selection.start
+                            )
+                            fromDate = TextFieldValue(formattedText, TextRange(newCursorPosition))
                         },
                         modifier = Modifier
                             .fillMaxWidth()
@@ -150,7 +220,8 @@ fun DiscountCustomerEffectiveCard() {
                                 contentDescription = "Calendar Icon",
                                 modifier = Modifier
                                     .clickable {
-
+                                        focusManager.clearFocus() // Clear focus before showing dialog
+                                        showDialog = true
                                     }
                                     .padding(8.dp),
                                 tint = textColor,
@@ -170,11 +241,12 @@ fun DiscountCustomerEffectiveCard() {
                 ) {
                     TextField(
                         value = toDate,
-                        onValueChange = {
-                            if (isWithinMaxCharLimit(it, 10)) {
-                                toDate = it
-                                isToDateError = it.isEmpty()
-                            }
+                        onValueChange = {newValue ->
+                            val (formattedText, newCursorPosition) = formatInput(
+                                newValue.text,
+                                newValue.selection.start
+                            )
+                            toDate = TextFieldValue(formattedText, TextRange(newCursorPosition))
                         },
                         modifier = Modifier
                             .fillMaxWidth()
@@ -201,7 +273,8 @@ fun DiscountCustomerEffectiveCard() {
                                 contentDescription = "Calendar Icon",
                                 modifier = Modifier
                                     .clickable {
-
+                                        focusManager.clearFocus() // Clear focus before showing dialog
+                                        showDialogTo = true
                                     }
                                     .padding(8.dp),
                                 tint = textColor,

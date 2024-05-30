@@ -154,7 +154,7 @@ fun DiscountCustomerCustomCard() {
                                             typeSelectedOption = selectionOption
                                             typeExpanded = false
                                         }) {
-                                            Text(text = selectionOption)
+                                            Text(text = selectionOption, color = contentColor)
                                         }
                                     }
                                 }
@@ -214,7 +214,7 @@ fun DiscountCustomerCustomCard() {
                                             chemistSelectedOption = selectionOption
                                             chemistExpanded = false
                                         }) {
-                                            Text(text = selectionOption)
+                                            Text(text = selectionOption,color = contentColor)
                                         }
                                     }
                                 }
@@ -244,9 +244,9 @@ fun DiscountCustomerCustomCard() {
                             ) {
 
                                 Text(
-                                    text = "Chemist Details",
+                                    text = "Chemist",
                                     fontSize = 11.sp,
-                                    modifier = Modifier.padding(5.dp),
+                                    modifier = Modifier.padding(3.dp),
                                     color = White,
                                 )
                             }
@@ -270,9 +270,9 @@ fun DiscountCustomerCustomCard() {
                             ) {
 
                                 Text(
-                                    text = "Other Service",
+                                    text = "Service",
                                     fontSize = 11.sp,
-                                    modifier = Modifier.padding(5.dp),
+                                    modifier = Modifier.padding(3.dp),
                                     color = White,
                                 )
                             }

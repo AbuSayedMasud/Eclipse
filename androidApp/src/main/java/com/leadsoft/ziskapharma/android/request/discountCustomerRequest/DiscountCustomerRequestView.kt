@@ -149,7 +149,7 @@ fun DiscountCustomerRequestView() {
 
                 },
                 modifier = Modifier
-                    .weight(2f)
+                    .weight(1.8f)
                     .padding(top = AppTheme.dimens.large),
                 colors = ButtonDefaults.buttonColors(
                     backgroundColor = PrimaryColor,
@@ -159,7 +159,7 @@ fun DiscountCustomerRequestView() {
             ) {
                 Text(
                     text = "Submit",
-                    fontSize = 16.sp,
+                    fontSize = 15.sp,
                     modifier = Modifier.padding(3.dp),
                     color = Color.White,
                     fontWeight = FontWeight.Bold,
@@ -171,7 +171,7 @@ fun DiscountCustomerRequestView() {
                 onClick = {
                 },
                 modifier = Modifier
-                    .weight(0.5f)
+                    .weight(0.7f)
                     .padding(top = AppTheme.dimens.large),
                 colors = ButtonDefaults.buttonColors(
                     backgroundColor = secondarayColor, // Example color
@@ -181,7 +181,7 @@ fun DiscountCustomerRequestView() {
             ) {
                 Text(
                     text = "New",
-                    fontSize = 16.sp,
+                    fontSize = 15.sp,
                     modifier = Modifier.padding(3.dp),
                     color = Color.White,
                     fontWeight = FontWeight.Bold,
