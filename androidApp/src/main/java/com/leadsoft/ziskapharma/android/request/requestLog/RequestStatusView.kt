@@ -1,6 +1,8 @@
 package com.leadsoft.ziskapharma.android.request.requestLog
 
+import android.util.Log
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -45,6 +47,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.leadsoft.ziskapharma.android.R
+import com.leadsoft.ziskapharma.android.customDialog.FilterCustomDialog
 import com.leadsoft.ziskapharma.android.theme.BackgroundColor
 import com.leadsoft.ziskapharma.android.theme.Gray
 import com.leadsoft.ziskapharma.android.theme.LightGray
@@ -76,6 +79,13 @@ fun RequestStatusView() {
     val options = listOf("Add", "Edit", "Delete")
     var expanded by remember { mutableStateOf(false) }
     var selectedOption by remember { mutableStateOf("Action") }
+
+    var showDialog = remember { mutableStateOf(false) }
+    if (showDialog.value) {
+        FilterCustomDialog(setShowDialog = {
+            showDialog.value = it
+        })
+    }
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -218,7 +228,12 @@ fun RequestStatusView() {
         Spacer(modifier = Modifier.height(16.dp))
         Row {
             Surface(
-                modifier = Modifier.weight(2f),
+                modifier = Modifier
+                    .weight(2f)
+                    .clickable(
+                    ) {
+                        showDialog.value = true
+                    },
                 color = backgroundColor,
                 shape = RoundedCornerShape(10.dp),
                 elevation = 2.dp,
@@ -640,3 +655,4 @@ fun RequestStatusView() {
         Spacer(modifier = Modifier.height(80.dp))
     }
 }
+
