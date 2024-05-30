@@ -22,7 +22,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
-import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
@@ -32,9 +31,10 @@ import com.leadsoft.ziskapharma.android.R
 import com.leadsoft.ziskapharma.android.api.RequestItem
 import com.leadsoft.ziskapharma.android.theme.getCardColors
 
+
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
-fun RequestView(navController: NavHostController) {
+fun RequestView(navController:NavHostController) {
     val configuration = LocalConfiguration.current
     val screenWidth = configuration.screenWidthDp.dp
 
