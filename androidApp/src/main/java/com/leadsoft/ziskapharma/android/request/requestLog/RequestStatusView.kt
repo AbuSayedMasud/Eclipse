@@ -47,7 +47,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.leadsoft.ziskapharma.android.R
-import com.leadsoft.ziskapharma.android.customDialog.FilterCustomDialog
+import com.leadsoft.ziskapharma.android.customDialog.RequestLogDetailsPopUp
 import com.leadsoft.ziskapharma.android.theme.BackgroundColor
 import com.leadsoft.ziskapharma.android.theme.Gray
 import com.leadsoft.ziskapharma.android.theme.LightGray
@@ -82,7 +82,7 @@ fun RequestStatusView() {
 
     var showDialog = remember { mutableStateOf(false) }
     if (showDialog.value) {
-        FilterCustomDialog(setShowDialog = {
+        RequestLogDetailsPopUp(setShowDialog = {
             showDialog.value = it
         })
     }
