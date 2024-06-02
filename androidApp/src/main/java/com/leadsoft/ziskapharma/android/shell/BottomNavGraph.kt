@@ -8,6 +8,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.leadsoft.ziskapharma.android.home.HomeScreen
+import com.leadsoft.ziskapharma.android.profile.ProfileMasterScreen
 import com.leadsoft.ziskapharma.android.profile.ProfileScreen
 import com.leadsoft.ziskapharma.android.request.RequestParentScreen
 import com.leadsoft.ziskapharma.android.service.ServiceScreen
@@ -40,7 +41,7 @@ fun BottomNavGraph(navController: NavHostController) {
             ServiceScreen( navController = navController,)
         }
         composable(BottomBar.Profile.route) {
-            ProfileScreen(
+            ProfileMasterScreen(
                 navController = navController
             )
         }
